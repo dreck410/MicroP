@@ -1,0 +1,12 @@
+c:\users\daniel\documents\visual studio 2013\Projects\armSim\armSim\bin\Debug\armSim.exe.config
+c:\users\daniel\documents\visual studio 2013\Projects\armSim\armSim\obj\Debug\armSim.Form1.resources
+c:\users\daniel\documents\visual studio 2013\Projects\armSim\armSim\obj\Debug\armSim.Properties.Resources.resources
+c:\users\daniel\documents\visual studio 2013\Projects\armSim\armSim\obj\Debug\armSim.csproj.GenerateResource.Cache
+c:\users\daniel\documents\visual studio 2013\Projects\armSim\armSim\bin\Debug\armSim.exe
+c:\users\daniel\documents\visual studio 2013\Projects\armSim\armSim\bin\Debug\armSim.pdb
+c:\users\daniel\documents\visual studio 2013\Projects\armSim\armSim\obj\Debug\armSim.exe
+c:\users\daniel\documents\visual studio 2013\Projects\armSim\armSim\obj\Debug\armSim.pdb
+c:\users\daniel\documents\visual studio 2013\Projects\armSim\armSim\obj\Debug\armSim.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\bin\Debug\armSim.exe.config
+C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\obj\Debug\armSim.exe
+C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\obj\Debug\armSim.pdb
