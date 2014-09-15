@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace armSim
 {
 
-    public class Options
+    public class OptionParser
     {
 
-        public string file;
-        public int memSize;
-        public bool test;
+        public string file = "";
+        public int memSize = 32768;
+        public bool test = false;
         public bool valid;
 
 
@@ -28,6 +28,18 @@ namespace armSim
         public bool getTest()
         {
             return test;
+        }
+        public void setTest(bool newTest)
+        {
+            test = newTest;
+        }
+        public void setFile(string newFile)
+        {
+            file = newFile;
+        }
+        public void setMemSize(int newMemSize)
+        {
+            memSize = newMemSize;
         }
 
         public void getError(string inpu)

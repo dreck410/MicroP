@@ -10,3 +10,9 @@ c:\users\daniel\documents\visual studio 2013\Projects\armSim\armSim\obj\Debug\ar
 C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\bin\Debug\armSim.exe.config
 C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\obj\Debug\armSim.exe
 C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\obj\Debug\armSim.pdb
+C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\obj\Debug\armSim.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\obj\Debug\armSim.Form1.resources
+C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\obj\Debug\armSim.Properties.Resources.resources
+C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\obj\Debug\armSim.csproj.GenerateResource.Cache
+C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\bin\Debug\armSim.exe
+C:\Users\Daniel\Sources\Repos\MicroP\armSim\armSim\bin\Debug\armSim.pdb

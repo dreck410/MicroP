@@ -16,7 +16,7 @@ namespace armSim
 
         //Comment for commit
         public static StreamWriter log;
-        public static Options optionParser;
+        //public static OptionParser options;
 
         public static void printArray(byte[] array)
         {
@@ -50,66 +50,59 @@ namespace armSim
         }
         */
 
-        public static int run(string[] args)
+        public static int run(OptionParser options)
         {
-
-            optionParser = new Options();
-
-
 
             try
             {
-                Console.WriteLine("We are here");
                 log = new StreamWriter("log.txt");
                 log.WriteLine("Log: Start");
 
-                if (optionParser.parse(args))
+            
+                if (options.getTest())
                 {
-                    if (optionParser.getTest())
-                    {
-                        TestRam.RunTests(log);
-                        TestArmSim.RunTests(log);
-                    }
-
-                    log.WriteLine("Log: MemSize " + optionParser.getMemSize());
-                    log.WriteLine("Log: File " + optionParser.getFile());
-                    log.WriteLine("Log: Little Endian " + BitConverter.IsLittleEndian);
-
-
-                    ELFReader e = new ELFReader();
-
-                    byte[] elfArray = File.ReadAllBytes(optionParser.getFile());
-
-                    e.ReadHeader(elfArray);
-
-
-
-                    log.WriteLine("ELF: Header Position " + e.elfHeader.e_phoff);
-                    log.WriteLine("ELF: Header Size " + e.elfHeader.e_ehsize);
-                    log.WriteLine("ELF: Entry Position " + e.elfHeader.e_entry.ToString("X4"));
-                    log.WriteLine("ELF: Number of program headers " + e.elfHeader.e_phnum);
-
-                    for (int i = 1; i <= e.elfHeader.e_phnum; i++)
-                    {
-                        log.WriteLine("ELF: Program Header {0}, Offset = {1}, Size = {2}",
-                                       i,
-                                       e.elfHeader.e_phoff,
-                                       e.elfHeader.e_phentsize);
-                    }
-
-                    //ignore the entry point for a loader
-                    //its for (executing)going into the ram after it's loaded
-
-                    ramSim ram = new ramSim(optionParser.getMemSize());
-                    writeElfToRam(e, elfArray, ref ram);
-
-
-                    log.WriteLine("Log: Ram Hash " + ram.getHash());
-
-
-                    printArray(ram.getArray());
-
+                    TestRam.RunTests(log);
+                    TestArmSim.RunTests(log);
                 }
+
+                log.WriteLine("Log: MemSize " + options.getMemSize());
+                log.WriteLine("Log: File " + options.getFile());
+                log.WriteLine("Log: Little Endian " + BitConverter.IsLittleEndian);
+
+
+                ELFReader e = new ELFReader();
+
+                byte[] elfArray = File.ReadAllBytes(options.getFile());
+
+                e.ReadHeader(elfArray);
+
+
+
+                log.WriteLine("ELF: Header Position " + e.elfHeader.e_phoff);
+                log.WriteLine("ELF: Header Size " + e.elfHeader.e_ehsize);
+                log.WriteLine("ELF: Entry Position " + e.elfHeader.e_entry.ToString("X4"));
+                log.WriteLine("ELF: Number of program headers " + e.elfHeader.e_phnum);
+
+                for (int i = 1; i <= e.elfHeader.e_phnum; i++)
+                {
+                    log.WriteLine("ELF: Program Header {0}, Offset = {1}, Size = {2}",
+                                    i,
+                                    e.elfHeader.e_phoff,
+                                    e.elfHeader.e_phentsize);
+                }
+
+                //ignore the entry point for a loader
+                //its for (executing)going into the ram after it's loaded
+
+                ramSim ram = new ramSim(options.getMemSize());
+                writeElfToRam(e, elfArray, ref ram);
+
+
+                log.WriteLine("Log: Ram Hash " + ram.getHash());
+
+
+                printArray(ram.getArray());
+
             }
             catch
             {
@@ -156,9 +149,5 @@ namespace armSim
         }
 
     }
-
-  
-  
-
 
 }
